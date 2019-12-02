@@ -1,1 +1,0 @@
-place down here php script and/or other files to include it to the server

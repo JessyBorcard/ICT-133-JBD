@@ -1,4 +1,18 @@
 <?php
+
+
+/**
+ * Created by PhpStorm
+ * Project's name :C to php
+ * Use :show some values
+ * User : Jessy.BORCARD
+ * Date : 25.11.2019
+ * Time : 09:03
+ *
+ *
+ */
+
+
 $value = 20;
 $step = 3;
 $i= 0;

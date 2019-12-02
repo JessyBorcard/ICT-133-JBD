@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="e97fe499-16aa-40f8-a7c2-d63cbd067977" name="server133" url="http://localhost:50002">
+      <webServer id="76691260-bbda-4475-ab9b-8dedaf2fef4f" name="server133" url="http://localhost:8080">
         <fileTransfer port="0" accessType="LOCAL" />
       </webServer>
     </option>

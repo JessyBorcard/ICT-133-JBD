@@ -1,8 +1,8 @@
 <?php
 /**
  * Created by PhpStorm
- * Project's name :
- * Use :
+ * Project's name :show data
+ * Use :show every server's argument
  * User : Jessy.BORCARD
  * Date : 25.11.2019
  * Time : 09:03

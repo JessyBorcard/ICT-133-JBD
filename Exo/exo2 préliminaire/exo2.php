@@ -1,5 +1,17 @@
 <?php
 
+/**
+ * Created by PhpStorm
+ * Project's name : Date
+ * Use : shows dates
+ * User : Jessy.BORCARD
+ * Date : 25.11.2019
+ * Time : 09:03
+ *
+ *
+ */
+
+
 date_default_timezone_set('UTC');
 $d = mktime(11,11,11,11,11,1111);
 echo date("l d F Y ", $d );

@@ -1,8 +1,8 @@
 <?php
 /**
  * Created by PhpStorm
- * Project's name :
- * Use :
+ * Project's name :advanced table	
+ * Use :show an advanced table
  * User : Jessy.BORCARD
  * Date : 25.11.2019
  * Time : 14:33
