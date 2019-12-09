@@ -83,7 +83,7 @@ body {font-family: Verdana, sans-serif;}
   color: white !important
 }</style>';
 
-$currentday = date("n");
+$currentday = date("d");
 $daysweek =array();
 for ($i = 0; $i<= 7; $i++){
     $row[$i] = array(date("D", mktime(0,0,0,$i)));
