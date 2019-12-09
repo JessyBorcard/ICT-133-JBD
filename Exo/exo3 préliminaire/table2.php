@@ -83,6 +83,19 @@ body {font-family: Verdana, sans-serif;}
   color: white !important
 }</style>';
 
+
+$currentmonthint = idate("m");
+$montharr = array();
+
+for($m = 1; $m <= 12; $m++){
+
+$montharr[$m] = date("F", mktime(0,0,0,$m));
+}
+
+$currentmonth = date("F");
+$month = date("F", mktime(0,0,0,$currentmonthint));
+$currentyear = idate("Y");
+$maxdayinmonth = idate("t");
 $currentday = date("d");
 $daysweek =array();
 for ($i = 0; $i<= 7; $i++){
@@ -90,26 +103,46 @@ for ($i = 0; $i<= 7; $i++){
     if($i == 7){
         break;
     }
-    $daysweek[$i] =  date("D", mktime(0,0,0,1, $i));
+    $daysweek[$i] =  date("D", mktime(0,0,0,$currentmonthint, $i));
 
 
 }
-for ($i = 0; $i<= 31; $i++){
+for ($i = 0; $i<= $maxdayinmonth; $i++){
+
+    if($i == 0){
+        $days[$i] =  "";
+        $i++;
+    }
 
     $days[$i] =  $i;
 
 
 }
-echo'<div class="month">      <ul>
-    <li class="prev">&#10094;</li>
-    <li class="next">&#10095;</li>
-    <li>
-      Novembre</php><br>
-      <span style="font-size:18px">2019</span>
+
+
+$monthdisplay = $currentmonth;
+$yeardisplay = $currentyear;
+
+echo"<div class='month'>      <ul>".
+    "<a href='table2.php?month=$montharr[$currentmonthint]&year=$yeardisplay&monthint=$currentmonthint'>".'<li class="prev">&#10094;</li></a>
+    <a><li class="next">&#10095;</li></a>
+    <li>'.  $montharr[$currentmonthint] .  '<?php ?>'
+      .'</php><br>
+      <span style="font-size:18px">'. $currentyear = @$_GET['year'].'</span>
     </li>
   </ul>
 </div>
 ';
+$monthdisplay  = @$_GET['month'];
+$currentmonthint = @$_GET["monthint"];
+
+echo $currentmonthint;
+
+if(isset($monthdisplay)){
+
+}else{
+
+}
 echo '<ul class="weekdays">';
 foreach ($daysweek as  $element){
     echo '<li>' . $element . '</li>';
