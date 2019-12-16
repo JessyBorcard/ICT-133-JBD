@@ -123,20 +123,33 @@ for ($i = 0; $i<= $maxdayinmonth; $i++){
 $monthdisplay = $currentmonth;
 $yeardisplay = $currentyear;
 
+
+$monthdisplay  = @$_POST['month'];
+
+$yeardisplay = @$_POST["year"];
+if(isset($monthdisplay)){
+    $monthdisplay  = @$_POST['month'];
+}else{
+    $monthdisplay  = 1;
+}
+if(isset($yeardisplay)){
+    $yeardisplay  = @$_POST['year'];
+}else{
+    $yeardisplay  = 1 ;
+}
 echo"<div class='month'>      <ul>".
-    "<a href='table2.php?month=$montharr[$currentmonthint]&year=$yeardisplay&monthint=$currentmonthint'>".'<li class="prev">&#10094;</li></a>
+    "<a>".'<li class="prev">&#10094;</li></a>
     <a><li class="next">&#10095;</li></a>
-    <li>'.  $montharr[$currentmonthint] .  '<?php ?>'
+    <li>'.  $montharr[$monthdisplay] .  '<?php ?>'
       .'</php><br>
-      <span style="font-size:18px">'. $currentyear = @$_GET['year'].'</span>
+      <span style="font-size:18px">'. $yeardisplay.'</span>
     </li>
   </ul>
 </div>
 ';
-$monthdisplay  = @$_GET['month'];
-$currentmonthint = @$_GET["monthint"];
 
-echo $currentmonthint;
+
+
 
 if(isset($monthdisplay)){
 
