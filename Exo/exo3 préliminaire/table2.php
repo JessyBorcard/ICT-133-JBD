@@ -142,7 +142,7 @@ echo"<div class='month'>      <ul>".
     <a><li class="next">&#10095;</li></a>
     <li>'.  $montharr[$monthdisplay] .  '<?php ?>'
       .'</php><br>
-      <span style="font-size:18px">'. $yeardisplay.'</span>
+      <span style="font-size:18px">'. $currentyear.'</span>
     </li>
   </ul>
 </div>
