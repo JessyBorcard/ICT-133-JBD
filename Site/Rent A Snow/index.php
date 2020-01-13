@@ -20,7 +20,10 @@ if(isset($_GET['action'])){
             home();
             break;
         case 'login':
-            login();
+            login($_POST);
+            break;
+        case 'logout':
+            logout();
             break;
         case 'contact':
             contact();

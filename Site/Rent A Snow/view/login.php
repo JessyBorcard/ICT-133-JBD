@@ -23,11 +23,16 @@ $titre = "Rent A Snow - login";
     <input  type="checkbox" name="bool" hidden="">
     <input type="submit">   <input type="reset" value="reset">
 </form>
-<?php if($_POST['bool'] == 1 || (!isset($_POST['bool'] ))) :  ?>
+<?php $password = @$_POST['bool'];
+?>
+<?php if($password == 1) :  ?>
     <p>le mdp est juste</p>
-    <?php else:?>
+
+    <?php  else:?>
 <p>mot de passe incorrecte !</p>
+
 <?php endif; ?>
+
 <?php
 $content = ob_get_clean();
 

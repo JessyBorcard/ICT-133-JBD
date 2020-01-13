@@ -15,7 +15,6 @@
 
 //tampo de flux stocké en mémoire
 ob_start();
-require"view/carousel.php";
 require "C:/Users/Jessy.BORCARD/Documents/ICT120/ICT-133-JBD/Exo/exo3 préliminaire/table2.php";
 $titre = "Rent A Snow - Accueil";
 

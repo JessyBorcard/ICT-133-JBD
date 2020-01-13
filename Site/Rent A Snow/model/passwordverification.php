@@ -27,6 +27,7 @@ function checkPassword($password){
     $bool = FALSE;
 if ($password == "1234"){
     $bool = TRUE;
+
 }else{
     $bool = FALSE;
 }
