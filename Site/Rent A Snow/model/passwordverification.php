@@ -40,7 +40,7 @@ function checkPassword($username, $password)
 
         $bool = FALSE;
     }
-        if ($password == $password2 || $username == $username2){
+        if ($password == $password2 && $username == $username2){
             $bool = FALSE;
         }else{
             $bool = TRUE;
