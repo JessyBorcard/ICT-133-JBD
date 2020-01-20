@@ -18,11 +18,15 @@ $titre = "Rent A Snow - produits";
 
 <?php
 $snow = jsonDecode();
-echo "marque" ." : " . "modèle" ." : " . "type" ." : " . "quantitée" ." : " . "prix" . "</br>";
+
+echo "<table style='width:100%'><tr>";
+
+echo "<th>"."marque" ."</th> " . "<th>". "modèle" ."</th>" ."<th>". "type" ."</th>"."<th>". "quantitée" ."</th>"."<th>". "prix" . "</th>";
 
 for ($i = 1; $i <= 6; $i++) {
-    echo implode(" : ", $snow["snow" . $i][0]) . "</br>";
+    echo "<tr>"."<td style=' border: 1px solid black;'>". implode("</td><td style=' border: 1px solid black;'> ", $snow["snow" . $i][0]) ."</td>". "</tr>";
 }
+echo "</table>";
 
 ?>
 
