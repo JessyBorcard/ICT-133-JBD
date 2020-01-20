@@ -32,15 +32,15 @@ function checkPassword($username, $password)
     $bool = FALSE;
     if(!$data == null) {
         foreach ($data as $elements) {
-            $username2 = @$elements["username"];
-            $password2 = @$elements["password"];
+            $username2 = $elements["username"];
+            $password2 = $elements["password"];
 
         }
     }else{
 
         $bool = FALSE;
     }
-        if ($password == $password2 && $username == $username2){
+        if ($password == $password2 || $username == $username2){
             $bool = FALSE;
         }else{
             $bool = TRUE;
