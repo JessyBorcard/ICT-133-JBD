@@ -20,18 +20,21 @@ session_start();
 
 require "model/passwordverification.php";
 require "model/model.php";
-function home(){
 
+
+/**
+ * home
+ * Use :open the home page
+ */
+function home()
+{
 
 
     $_SESSION['time'] = currentTime();
     $_SESSION['greetings'] = timeIdentification($_SESSION['time']);
-
-    $_GET['action']="home";
+    $_GET['action'] = "home";
     require "view/home.php";
-
 }
-
 /**
  * login
  * Use : call login.php page
@@ -52,6 +55,9 @@ function login($in){
 
             $bool = 1;
             $_SESSION['login'] = $username;
+            $data_array = array ($username ,$password);
+            $key_array = array("username", "password");
+            jsonEncode("json.json", $data_array , $key_array);
             $_GET['action']="home";
             require "view/home.php";
         } else {
@@ -59,11 +65,27 @@ function login($in){
             require "view/login.php";
             $bool = 2;
         }
+
     }
+
 
 $_POST['bool'] = $bool;
 
 
+
+}
+
+
+/**
+ * products
+ * Use :Open the products page
+ */
+function products(){
+
+
+
+    $_GET['action'] = "products";
+    require "view/products.php";
 
 }
 
@@ -77,5 +99,7 @@ function logout(){
     $_GET['action']="home";
     require "view/home.php";
 }
+
+
 
 ?>

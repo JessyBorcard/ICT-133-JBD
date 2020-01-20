@@ -84,7 +84,7 @@
                                     <li><a href="index.php?action=login">Login</a></li>
                                 <?php endif; ?>
                                 <?php endif; ?>
-						    <li><a href="view/content/contact.php">Produits</a></li>
+						    <li><a href="index.php?action=products">Produits</a></li>
                             </ul>
                             </div>
                     </div>

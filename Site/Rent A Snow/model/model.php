@@ -33,3 +33,35 @@ function timeIdentification($time){
     }
     return $greetings;
 }
+
+/**
+ * jsonDecode
+ * Use : decode a json file and return it as a array
+ * @return mixed
+ */
+function jsonDecode(){
+$str_json_file = file_get_contents("model/JSON/Snows.json");
+ $decoded_json  =  json_decode($str_json_file, true);
+
+ $snow = $decoded_json;
+
+return $snow;
+}
+
+/**
+ * @param $path
+ * @param $data
+ * @param $key
+ * jsonEncode
+ * Use : Encode, inputs to a specific file in json format
+ */
+function jsonEncode($path, $data, $key){
+
+
+$json_data_in = array($key[0] => $data[0], $key[1] => $data[1]);
+
+   $json_val = json_encode($json_data_in);
+
+    file_put_contents($path, $json_val);
+
+}

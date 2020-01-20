@@ -1,0 +1,56 @@
+{
+  "snow1": [
+    {
+      "marque": "burton",
+      "modele": "d512",
+      "type": "freestyle",
+      "quantite": 5,
+      "prix": 600
+    }
+  ],
+  "snow2": [
+    {
+      "marque": "burton1",
+      "modele": "d5122",
+      "type": "freestyle",
+      "quantite": 50,
+      "prix": 600
+    }
+  ],
+  "snow3": [
+    {
+      "marque": "burton2",
+      "modele": "d5123",
+      "type": "freestyle",
+      "quantite": 500,
+      "prix": 600
+    }
+  ],
+  "snow4": [
+    {
+      "marque": "burton3",
+      "modele": "d5124",
+      "type": "freestyle",
+      "quantite": 500,
+      "prix": 600
+    }
+  ],
+  "snow5": [
+    {
+      "marque": "burton5",
+      "modele": "d5126",
+      "type": "freestyle",
+      "quantite": 5000,
+      "prix": 600
+    }
+  ],
+  "snow6": [
+    {
+      "marque": "burton6",
+      "modele": "d5127",
+      "type": "freestyle",
+      "quantite": 50000,
+      "prix": 600
+    }
+  ]
+}
