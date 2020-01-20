@@ -39,13 +39,13 @@ function timeIdentification($time){
  * Use : decode a json file and return it as a array
  * @return mixed
  */
-function jsonDecode(){
-$str_json_file = file_get_contents("model/JSON/Snows.json");
+function jsonDecode($path){
+$str_json_file = file_get_contents($path);
  $decoded_json  =  json_decode($str_json_file, true);
 
- $snow = $decoded_json;
+ $out = $decoded_json;
 
-return $snow;
+return $out;
 }
 
 /**
@@ -55,13 +55,25 @@ return $snow;
  * jsonEncode
  * Use : Encode, inputs to a specific file in json format
  */
+
+
 function jsonEncode($path, $data, $key){
+   $data_file_in = file_get_contents($path);
 
 
 $json_data_in = array($key[0] => $data[0], $key[1] => $data[1]);
 
    $json_val = json_encode($json_data_in);
 
-    file_put_contents($path, $json_val);
+    $fh = fopen($path, 'r+') or die("can't open file");
 
+    $stat = fstat($fh);
+    ftruncate($fh, $stat['size']-1);
+    fclose($fh);
+
+    if(file_get_contents($path) == ""){
+        file_put_contents($path, "[" . $json_val . "]", FILE_APPEND);
+    }else {
+        file_put_contents($path, "," . $json_val . "]", FILE_APPEND);
+    }
 }

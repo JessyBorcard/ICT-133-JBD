@@ -17,7 +17,7 @@ $titre = "Rent A Snow - produits";
 ?>
 
 <?php
-$snow = jsonDecode();
+$snow = jsonDecode("model/JSON/Snows.json");
 
 echo "<table style='width:100%'><tr>";
 

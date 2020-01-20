@@ -44,23 +44,22 @@ function login($in){
     $bool = 0;
     $password = @$in['password'];
     $username = @$in['login'];
-    $checkedpassword=  checkPassword($password);
+    $checkedpassword = checkPassword($username, $password);
     if(!$password){
 
         $_GET['action'] = "login";
         require "view/login.php";
     }else {
 
-        if ($checkedpassword == TRUE) {
+        if ($checkedpassword == FALSE) {
 
             $bool = 1;
             $_SESSION['login'] = $username;
-            $data_array = array ($username ,$password);
-            $key_array = array("username", "password");
-            jsonEncode("json.json", $data_array , $key_array);
+
             $_GET['action']="home";
             require "view/home.php";
         } else {
+
             $_GET['action'] = "login";
             require "view/login.php";
             $bool = 2;
@@ -100,6 +99,21 @@ function logout(){
     require "view/home.php";
 }
 
+function register($in){
 
+
+
+    $_GET['action']="register";
+    require "view/register.php";
+
+    $password = @$in['passwordregister'];
+    $username = @$in['usernameregister'];
+
+    $data_array = array ($username ,$password);
+    $key_array = array("username", "password");
+    if(isset($password)) {
+        jsonEncode("json.json", $data_array, $key_array);
+    }
+}
 
 ?>

@@ -23,14 +23,31 @@
  */
 
 
-function checkPassword($password){
-    $bool = FALSE;
-if ($password == "1234"){
-    $bool = TRUE;
+function checkPassword($username, $password)
+{
+    $data = jsonDecode("json.json");
+    $username2 = "";
+    $password2 = "";
 
-}else{
     $bool = FALSE;
-}
+    if(!$data == null) {
+        foreach ($data as $elements) {
+            $username2 = @$elements["username"];
+            $password2 = @$elements["password"];
+
+        }
+    }else{
+
+        $bool = FALSE;
+    }
+        if ($password == $password2 && $username == $username2){
+            $bool = FALSE;
+        }else{
+            $bool = TRUE;
+        }
+
+
+
 return $bool;
 }
 ?>

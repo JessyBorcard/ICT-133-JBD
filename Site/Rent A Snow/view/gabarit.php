@@ -70,7 +70,7 @@
                                     <li><a href="index.php?action=home">Accueil</a></li>
                                 <?php endif; ?>
 
-                                <?php $password = @$_POST['password']; if(checkPassword($password) == 1) :  ?>
+                                <?php $username = @$_POST['login']; $password = @$_POST['password']; if(checkPassword($username,$password) == 1) :  ?>
                                     <?php  if ($_GET['action'] == "logout") :?>
                                         <li class="active"><a href="index.php?action=logout">Logout</a></li>
                                     <?php else:?>
@@ -84,6 +84,7 @@
                                     <li><a href="index.php?action=login">Login</a></li>
                                 <?php endif; ?>
                                 <?php endif; ?>
+                                <li><a href="index.php?action=register">register</a></li>
 						    <li><a href="index.php?action=products">Produits</a></li>
                             </ul>
                             </div>
@@ -92,9 +93,9 @@
 
                 </div>
             </div>
-        <?php $password = @$_POST['password']; if(checkPassword($password) == 1) :  ?>
+        <?php $username = @$_POST['login']; $password = @$_POST['password']; if(checkPassword($username,$password) == 1) :  ?>
         <p>Connecté</p>
-         <?php echo $_SESSION['login'];?>
+         <?php echo @$_SESSION['login'];?>
         <?php else:?>
             <p>Déconnecté</p><br>
 
